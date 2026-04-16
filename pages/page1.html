@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef's Dashboard</title>
+    <link rel="stylesheet" href="page1.css">
+</head>
+<body>
+    <div class="bg-blur"></div>
+
+    <main class="wrapper">
+        <div class="glass-container animate-fade-in">
+            <header class="dashboard-header">
+                <div class="welcome-box">
+                    <span class="label">WELCOME</span>
+                    <h2 id="display-name">mok</h2>
+                </div>
+                <div class="streak-box">
+                    <span class="streak-icon">🔥</span>
+                    <span class="streak-count">0 DAYS</span>
+                </div>
+            </header>
+
+                <section="inventory-section">
+                    <div class="section-header">
+                        <h3>MY INVENTORY</h3>
+                        <p>Add ingredients available in your kitchen</p>
+                    </div>
+                    <div class="add-item-bar">
+                        <input type="text" id="item-input" placeholder="e.g. Avocado, Spinach...">
+                        <button type="button" class="add-btn">+</button>
+                    </div>
+                    <div class="inventory-list">
+                        
+                    </div>
+                </section>
+
+                <section class="menu-section">
+                    <div class="section-header pd">
+                        <h3>CHEF'S MENU</h3>
+                        <p>Select your next personalized meal</p>
+                    </div>
+                    <div class="menu-options">
+                        <label class="menu-card">
+                            <input type="radio" name="meal" value="breakfast" checked>
+                            <div class="card-content">
+                                <span class="meal-icon">🍳</span>
+                                <h4>BREAKFAST</h4>
+                            </div>
+                        </label>
+                        <label class="menu-card">
+                            <input type="radio" name="meal" value="lunch">
+                            <div class="card-content">
+                                <span class="meal-icon">🥗</span>
+                                <h4>LUNCH</h4>
+                            </div>
+                        </label>
+                        <label class="menu-card">
+                            <input type="radio" name="meal" value="dinner">
+                            <div class="card-content">
+                                <span class="meal-icon">🍽️</span>
+                                <h4>DINNER</h4>
+                            </div>
+                        </label>
+                    </div>
+                </section>
+                <section class="persona-section">
+    <div class="section-header">
+        <h3>CHOOSE YOUR CHEF</h3>
+        <p>Pick a personality for your AI mentor</p>
+    </div>
+    <div class="persona-options">
+        <label class="persona-card">
+            <input type="radio" name="persona" value="hosteler" checked>
+            <div class="persona-content">
+                <span class="persona-icon">🎒</span>
+                <div class="persona-info">
+                    <span class="persona-name">HOSTELER</span>
+                    <span class="persona-desc">Cheap & Easy</span>
+                </div>
+            </div>
+        </label>
+
+        <label class="persona-card">
+            <input type="radio" name="persona" value="gym_bro">
+            <div class="persona-content">
+                <span class="persona-icon">💪</span>
+                <div class="persona-info">
+                    <span class="persona-name">GYM BRO</span>
+                    <span class="persona-desc">Max Protein</span>
+                </div>
+            </div>
+        </label>
+
+        <label class="persona-card">
+            <input type="radio" name="persona" value="indian_mom">
+            <div class="persona-content">
+                <span class="persona-icon">👩🏽‍🍳</span>
+                <div class="persona-info">
+                    <span class="persona-name">INDIAN MOM</span>
+                    <span class="persona-desc">Healthy & Warm</span>
+                </div>
+            </div>
+        </label>
+
+        <label class="persona-card">
+            <input type="radio" name="persona" value="master_chef">
+            <div class="persona-content">
+                <span class="persona-icon">👨🏻‍🍳</span>
+                <div class="persona-info">
+                    <span class="persona-name">MASTERCHEF</span>
+                    <span class="persona-desc">Technique Pro</span>
+                </div>
+            </div>
+        </label>
+    </div>
+</section>
+
+            <button type="submit" class="generate-btn">GENERATE RECIPES</button>
+    </main>
+    <script src="page1.js"></script>
+</body>
+</html>

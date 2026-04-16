@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pick Your Dish</title>
+    <link rel="stylesheet" href="page1.css"> </head>
+<body>
+    <div class="bg-blur"></div>
+    <main class="wrapper">
+        <div class="glass-container animate-fade-in">
+            <header class="section-header">
+                <h1>CHEF'S RECOMMENDATIONS</h1>
+                <p>Based on your kitchen inventory</p>
+            </header>
+
+            <div id="recipe-gallery" class="menu-options" style="grid-template-columns: 1fr 1fr; margin-top: 30px;">
+                <div class="loader-text">Analyzing ingredients...</div>
+            </div>
+
+            <button onclick="window.location.href='page1.html'" class="nav-btn" style="margin-top: 20px; width: auto;">← BACK TO KITCHEN</button>
+        </div>
+    </main>
+    <script src="selection.js"></script>
+</body>
+</html>

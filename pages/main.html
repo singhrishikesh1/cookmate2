@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Profile Setup</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="bg-blur"></div>
+
+    <main class="wrapper">
+        <div class="glass-container animate-fade-up">
+            <header class="form-header op">
+                <span class="step-indicator">STEP 1 / 1</span>
+                <h1>PROFILE SETUP</h1>
+                <p>Personalize your nutrition journey</p>
+            </header>
+
+            <form id="profileForm" class="main-form op">
+    <div class="form-grid">
+        <div class="field-group full">
+            <label>USER NAME</label>
+            <input type="text" id="username" placeholder="Enter your full name" required>
+        </div>
+
+        <div class="field-group full">
+            <label>YOUR PRIMARY GOAL</label>
+            <div class="goal-tabs">
+                <label class="tab">
+                    <input type="radio" name="goal" value="CUT" checked>
+                    <div class="tab-box">CUT</div>
+                </label>
+                <label class="tab">
+                    <input type="radio" name="goal" value="BULK">
+                    <div class="tab-box">BULK</div>
+                </label>
+                <label class="tab">
+                    <input type="radio" name="goal" value="MAINTAIN">
+                    <div class="tab-box">MAINTAIN</div>
+                </label>
+            </div>
+        </div>
+
+        <div class="field-group">
+            <label>ALLERGIES</label>
+            <textarea id="allergies" placeholder="e.g. Peanuts, Gluten..."></textarea>
+        </div>
+        </div>
+    <button type="submit" class="finish-btn">SAVE PROFILE</button>
+</form>
+        </div>
+    </main>
+   <script src="main.js"></script>
+</body>
+</html>

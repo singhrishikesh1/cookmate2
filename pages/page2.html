@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ICX | AI Cooking Mentor</title>
+    <link rel="stylesheet" href="page2.css">
+</head>
+<body>
+    <div class="bg-blur"></div>
+    <div class="page-container">
+
+    <div class="content-panel animate-slide-up">
+        <div class="recipe-header">
+            <span class="tag" id="step-indicator">STEP 1 OF 6</span>
+            <h1 id="recipe-name">Loading...</h1>
+        </div>
+
+        <div class="metrics-row">
+            <div class="metric">
+                <span class="label">TIMER</span>
+                <span class="val" id="timer-display">02:00</span>
+            </div>
+            <div class="metric">
+                <span class="label">PROTEIN</span>
+                <span class="val" id="recipe-protein">High</span>
+            </div>
+        </div>
+
+        <div class="focus-box">
+            <h3>INSTRUCTION</h3>
+            <p id="instruction-text">Fetching your AI recipe steps...</p>
+        </div>
+
+        <div class="btn-group">
+            <button class="btn-main" id="next-btn">NEXT STEP</button>
+            <div style="display: flex; gap: 10px;">
+                <button class="btn-ghost" id="start-timer-btn" style="flex: 1;">START TIMER</button>
+                <button class="btn-ghost" id="prev-btn" style="flex: 1;">PREVIOUS</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src="page2.js"></script>
+</body>
+</html>

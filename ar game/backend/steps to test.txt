@@ -1,0 +1,44 @@
+post /users/
+{
+  "username": "chef_master",
+  "preferences": "Likes spicy food",
+  "dietary_goal": "maintenance",
+  "allergies": "none"
+}
+
+POST /generate-recipe/
+
+{
+  "user_id": 1,
+  "meal_type": "breakfast"
+}
+copy the json response for next step
+
+endpoint : POST/mentor/start
+{
+  "user_id": 1,
+  "recipe_data": {
+    "dish_name": "Scrambled Eggs",
+    "description": "High protein breakfast",
+    "ingredients": ["2 Eggs", "Salt"],
+    "equipment": ["Pan"],
+    "total_time_minutes": 10,
+    "macros_estimate": {"protein": "12g"},
+    "steps": [
+      {
+        "step_number": 1,
+        "instruction": "Crack eggs into a bowl and whisk.",
+        "duration_seconds": 60,
+        "heat_level": "off",
+        "visual_cue": "Uniform yellow mixture"
+      },
+      {
+         "step_number": 2,
+         "instruction": "Pour into hot pan.",
+         "duration_seconds": 120,
+         "heat_level": "medium",
+         "visual_cue": "Edges starting to set"
+      }
+    ]
+  }
+}
