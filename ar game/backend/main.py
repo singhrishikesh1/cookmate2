@@ -68,11 +68,11 @@ def add_inventory(user_id: int, items: list[schemas.InventoryItemCreate], db: Se
 @app.post("/generate-recipe/", response_model=schemas.RecipeList)
 def generate_recipe(request: schemas.RecipeRequest, db: Session = Depends(get_db)):
     user = db.query(models.User).filter(models.User.id == request.user_id).first()
-    if not user: 
+    if not user:
         raise HTTPException(status_code=404, detail="User not found")
-    
+
     pantry = [i.name for i in user.inventory]
-    
+
     recipe_data = ai_chef.ask_chef_json(
         ingredients=pantry,
         preferences=user.preferences,
@@ -81,9 +81,18 @@ def generate_recipe(request: schemas.RecipeRequest, db: Session = Depends(get_db
         meal_type=request.meal_type,
         portion_multiplier=user.portion_multiplier,
         effort_level=user.current_effort_level,
-        persona=user.persona
+        persona=user.persona,
     )
-    print(f"AI Response: {recipe_data}")
+
+    if not isinstance(recipe_data, dict):
+        raise HTTPException(status_code=502, detail="Invalid response from AI service")
+
+    if "error" in recipe_data:
+        raise HTTPException(status_code=502, detail=recipe_data["error"])
+
+    if "recipes" not in recipe_data:
+        raise HTTPException(status_code=502, detail="AI service returned an unexpected payload")
+
     return recipe_data
 
 @app.post("/mentor/start", response_model=schemas.MentorStepResponse)
@@ -136,6 +145,6 @@ async def voice_interaction(session_id: int, file: UploadFile = File(...), db: S
     return Response(content=audio_response, media_type="audio/mpeg")
 @app.delete("/inventory/{user_id}/clear")
 async def clear_inventory(user_id: int, db: Session = Depends(get_db)):
-    db.query(models.InventoryItem).filter(models.InventoryItem.owner_id == user_id).delete()
+    db.query(models.InventoryItem).filter(models.InventoryItem.user_id == user_id).delete()
     db.commit()
     return {"message": "Inventory cleared successfully"}
